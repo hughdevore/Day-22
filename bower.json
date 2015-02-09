@@ -1,0 +1,21 @@
+{
+  "name": "Day-22",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hughdevore/Day-22",
+  "authors": [
+    "Hugh J. Devore <hughdevore@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mocha": "~2.1.0",
+    "chai": "~1.10.0",
+    "underscore": "~1.7.0"
+  }
+}
