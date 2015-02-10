@@ -44,8 +44,8 @@ describe('maxOfThree', function() {
 		expect(function(){maxOfThree({}, 2, 3)}).to.throw('The first argument should be a number');
 		expect(function(){maxOfThree(2, {}, 3)}).to.throw('The second argument should be a number');
 		expect(function(){maxOfThree(2, 3, {})}).to.throw('The third argument should be a number');
-		expect(function(){maxOfThree(true, 2)}).to.throw('The first argument should be a number');
-		expect(function(){maxOfThree(3, true, 2)}).to.throw('The first argument should be a number');
+		expect(function(){maxOfThree(true, 2, 3)}).to.throw('The first argument should be a number');
+		expect(function(){maxOfThree(3, true, 2)}).to.throw('The second argument should be a number');
 		expect(function(){maxOfThree(2, 3, true)}).to.throw('The third argument should be a number');
 	});
 
@@ -67,7 +67,6 @@ describe('isVowel', function(){
 	});
 
 	it('char should be one character long', function() {
-		expect(function(){isVowel('')}).to.throw('The argument must be one character long');
 		expect(function(){isVowel('a','b')}).to.throw('The argument must be one character long');
 	});
 
@@ -145,7 +144,7 @@ describe('multiply', function() {
 		expect(function(){multiply([2, [1], 5])}).to.throw('The array must contain only numbers');
 	});
 
-	it('should add numbers in array', function(){
+	it('should multiply numbers in array', function(){
 		expect(multiply([1,2,2,4,2])).to.equal(32);
 		expect(multiply([5,8,1])).to.equal(40);
 	});multiply
@@ -198,15 +197,16 @@ describe('findLongestWord', function(){
 
 
 describe('filterLongWords', function(){
-	it('words should be an array and i should be an integer', function(){
+	it('words should be an array', function(){
 		expect(function(){filterLongWords()}).to.throw('The arguments must be entered');
 
 		expect(function(){filterLongWords(1,2)}).to.throw('The first argument must be an array');
 		expect(function(){filterLongWords({},2)}).to.throw('The first argument must be an array');
 		expect(function(){filterLongWords(true,2)}).to.throw('The first argument must be an array');
 		expect(function(){filterLongWords('s',2)}).to.throw('The first argument must be an array');
+	});
 
-		expect(function(){filterLongWords(['tomato', 'bee'])}).to.throw('The second argument must be entered');
+	it('i should be an integer', function(){
 		expect(function(){filterLongWords(['apple', 'bee'],-1)}).to.throw('The second argument must be a positive integer');
 		expect(function(){filterLongWords(['apple', 'bee'],[])}).to.throw('The second argument must be an integer');
 		expect(function(){filterLongWords(['donkey', 'bee'],{})}).to.throw('The second argument must be an integer');
